@@ -1,0 +1,14 @@
+<div class="long-title">
+    <h3>Gestión de productos</h3>
+</div>
+<dx-data-grid id="gridContainer" [dataSource]="productsList" keyExpr="ProductoId" [allowColumnReordering]="true"
+    [showBorders]="true" (onSaving)="saveOrEditProduct($event)" (onEditingStart)="startEditing()"
+    (onRowRemoved)="deleteProduct($event)" (onInitNewRow)="initNewRow()" (onRowRemoving)="rowRemoving()"
+    >
+    <dxo-paging [enabled]="true"></dxo-paging>
+    <dxo-editing mode="row" [allowUpdating]="true" [allowDeleting]="true" [allowAdding]="true">
+    </dxo-editing>
+    <dxi-column dataField="ProductoCodigo"></dxi-column>
+    <dxi-column dataField="ProductoDescripcion"></dxi-column>
+    <dxi-column dataField="ProductoEstado"></dxi-column>
+</dx-data-grid>
